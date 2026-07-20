@@ -4,6 +4,7 @@ public class UrlConstant {
 
     // Base API URL V1
     public static final String API_BASE_V1 = "/api/v1";
+    public static final String API_V1_REGISTER = "/api/v1/register";
 
     // Auth URLs
     public static final String AUTH = "/auth";
