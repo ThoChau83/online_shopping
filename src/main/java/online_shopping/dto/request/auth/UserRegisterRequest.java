@@ -1,6 +1,9 @@
 package online_shopping.dto.request.auth;
 
+import jakarta.validation.constraints.Email;
+
 public class UserRegisterRequest {
+    @Email
     private String email;
     private String password;
     private String confirmPassword;
