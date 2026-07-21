@@ -6,6 +6,7 @@ import online_shopping.dto.request.UserCreationRequest;
 import online_shopping.dto.request.auth.UserRegisterRequest;
 import online_shopping.dto.response.UserCreationResponse;
 import online_shopping.entity.Product;
+import online_shopping.entity.User;
 import online_shopping.service.ProductService;
 import online_shopping.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,9 @@ public class UserController {
         return userService.registerUser(userRegisterRequest);
     }
 
-
+    @GetMapping("/api/v1/users")
+    public List<User> getAllUsers(){
+        return userService.getAllUsers();
+    }
 
 }
