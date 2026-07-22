@@ -41,9 +41,7 @@ public class UserController {
         return userService.registerUser(userRegisterRequest);
     }
 
-    @GetMapping("/api/v1/users")
-    public List<User> getAllUsers(){
-        return userService.getAllUsers();
-    }
+
+
 
 }

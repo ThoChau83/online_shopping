@@ -60,5 +60,16 @@ public class UserServiceImp implements UserService {
         return userRepository.findAll();
     }
 
+    @Override
+    public User blockUser(String id) {
+        User user = userRepository.findById(id).orElseThrow();
+
+        user.setStatus("BLOCKED");
+
+        return userRepository.save(user);
+
+
+    }
+
 
 }

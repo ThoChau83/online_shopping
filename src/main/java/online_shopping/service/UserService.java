@@ -18,5 +18,6 @@ public interface UserService {
 
     List<User> getAllUsers();
 
+    User blockUser(String id);
 
 }
