@@ -1,6 +1,9 @@
 package online_shopping.controller;
 
 import online_shopping.constant.UrlConstant;
+import online_shopping.dto.request.product.ProductCreateRequest;
+import online_shopping.dto.request.product.ProductUpdateRequest;
+import online_shopping.entity.Product;
 import online_shopping.entity.User;
 import online_shopping.service.AdminService;
 import online_shopping.service.UserService;
@@ -31,6 +34,22 @@ public class AdminController {
     @PatchMapping(UrlConstant.UNBLOCK_USERS)
     public User unBlock( @PathVariable  String id){
         return adminService.unBlock(id);
+    }
+
+
+    @PostMapping(UrlConstant.ADMIN_PRODUCTS)
+    public Product createProduct(@RequestBody ProductCreateRequest productCreateRequest){
+        return adminService.createProduct(productCreateRequest);
+    }
+
+    @PutMapping(UrlConstant.CRUD_ADMIN_PRODUCTS)
+    public Product updateProduct(@RequestBody  ProductUpdateRequest productUpdateRequest, @PathVariable String id){
+        return adminService.updateProduct(id, productUpdateRequest);
+    }
+
+    @DeleteMapping(UrlConstant.CRUD_ADMIN_PRODUCTS)
+    public void deleteProduct(@PathVariable String id){
+        adminService.deleteProduct(id);
     }
 
 
