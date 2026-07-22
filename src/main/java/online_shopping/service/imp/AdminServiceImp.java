@@ -21,6 +21,11 @@ public class AdminServiceImp implements AdminService {
     }
 
     @Override
+    public User unBlock(String id) {
+        return userService.unBlock(id);
+    }
+
+    @Override
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }

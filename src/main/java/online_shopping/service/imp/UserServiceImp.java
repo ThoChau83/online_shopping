@@ -71,5 +71,14 @@ public class UserServiceImp implements UserService {
 
     }
 
+    @Override
+    public User unBlock(String id) {
+        User user = userRepository.findById(id).orElseThrow();
+
+        user.setStatus("ACTIVE");
+
+        return userRepository.save(user);
+    }
+
 
 }

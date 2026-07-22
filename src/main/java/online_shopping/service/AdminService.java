@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface AdminService {
     User blockUser(String id);
+    User unBlock(String id);
     List<User> getAllUsers();
 }

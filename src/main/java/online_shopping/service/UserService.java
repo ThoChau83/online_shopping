@@ -20,4 +20,6 @@ public interface UserService {
 
     User blockUser(String id);
 
+    User unBlock(String id);
+
 }

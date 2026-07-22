@@ -15,16 +15,26 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
-
+    // Admin xem danh sach user
     @GetMapping("/api/v1/users")
     public List<User> getAllUsers(){
         return adminService.getAllUsers();
     }
 
+    // Admin block user
     @PatchMapping(UrlConstant.BLOCK_USERS)
     public User blockUser( @PathVariable  String id){
         return adminService.blockUser(id);
     }
+
+    // Admin unblock user
+    @PatchMapping(UrlConstant.UNBLOCK_USERS)
+    public User unBlock( @PathVariable  String id){
+        return adminService.unBlock(id);
+    }
+
+
+
 
 
 }
